@@ -41,4 +41,9 @@ export class Wishlist {
   getFavorites(catalog: BookCatalog): Book[] {
     return catalog.getBooks().filter(book => this.favoriteIds.includes(book.id));
   }
+
+  // Метод для сохранения в localStorage (используется в main.ts)
+  getIds(): string[] {
+    return [...this.favoriteIds];
+  }
 }
